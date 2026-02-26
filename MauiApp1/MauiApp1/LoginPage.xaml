@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.LoginPage"
+             Title="Вхід"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="*,Auto,*" Padding="32">
+
+        <!-- Центральна частина -->
+        <StackLayout Grid.Row="1" Spacing="16">
+
+            <Label Text="Logic"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#512BD4" />
+
+            <Label Text="Система управління логістикою"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20" />
+
+            <Entry x:Name="LoginEntry"
+                   Placeholder="Логін"
+                   Text="{Binding Login}"
+                   ReturnType="Next" />
+
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Пароль"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   ReturnType="Done" />
+
+            <Label Text="{Binding ErrorMessage}"
+                   TextColor="Red"
+                   IsVisible="{Binding HasError}"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Увійти"
+                    Command="{Binding LoginCommand}"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

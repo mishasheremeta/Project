@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApp1.Resources.ViewModels"
+             xmlns:models="clr-namespace:logic.Models;assembly=logic"
+             x:DataType="viewmodels:CargosViewModel"
+             x:Class="MauiApp1.CargosPage"
+             Title="Вантажі">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*">
+
+        <!-- Кнопка додавання -->
+        <Button Grid.Row="0"
+                Text="+ Додати замовлення"
+                Command="{Binding AddCargoCommand}"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="45"
+                Margin="0,0,0,12" />
+
+        <ActivityIndicator Grid.Row="1"
+                           IsRunning="{Binding IsLoading}"
+                           IsVisible="{Binding IsLoading}" />
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Cargos}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Cargo">
+                    <Border Margin="0,6" Padding="14">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" />
+                                <Label Text="{Binding Origin, StringFormat='З: {0}'}" TextColor="Gray" />
+                                <Label Text="{Binding Destination, StringFormat='До: {0}'}" TextColor="Gray" />
+                                <Label Text="{Binding Customer.CompanyName, StringFormat='Клієнт: {0}'}" />
+                                <Label Text="{Binding Weight, StringFormat='Вага: {0}'}" />
+                                <Label Text="{Binding Price, StringFormat='Ціна: {0} грн'}" />
+                            </StackLayout>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Status}"
+                                   TextColor="Orange"
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

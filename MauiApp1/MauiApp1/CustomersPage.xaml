@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CustomersPage"
+             Title="Клієнти">
+
+    <Grid Padding="16" RowDefinitions="Auto,*">
+
+        <ActivityIndicator Grid.Row="0"
+                           IsRunning="{Binding IsLoading}"
+                           IsVisible="{Binding IsLoading}" />
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Customers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,6" Padding="14" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding CompanyName}" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="{Binding Contact, StringFormat='Контакт: {0}'}" TextColor="Gray" />
+                            <Label Text="{Binding Phone, StringFormat='Тел: {0}'}" TextColor="Gray" />
+                            <Label Text="{Binding Email}" TextColor="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

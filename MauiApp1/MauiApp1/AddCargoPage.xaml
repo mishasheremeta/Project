@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApp1.Resources.ViewModels"
+             xmlns:models="clr-namespace:logic.Models;assembly=logic"
+             x:DataType="viewmodels:AddCargoViewModel"
+             x:Class="MauiApp1.AddCargoPage"
+             Title="Нове замовлення">
+
+    <Grid RowDefinitions="*,Auto" Padding="16">
+
+        <ScrollView Grid.Row="0">
+            <StackLayout Spacing="12">
+
+                <Label Text="Клієнт *" FontAttributes="Bold" />
+                <Picker Title="Оберіть клієнта"
+                        ItemsSource="{Binding Customers}"
+                        SelectedItem="{Binding SelectedCustomer}"
+                        ItemDisplayBinding="{Binding CompanyName}" />
+
+                <Label Text="Назва вантажу *" FontAttributes="Bold" />
+                <Entry Placeholder="Назва" Text="{Binding Name}" />
+
+                <Label Text="Звідки *" FontAttributes="Bold" />
+                <Entry Placeholder="Місто відправлення" Text="{Binding Origin}" />
+
+                <Label Text="Куди *" FontAttributes="Bold" />
+                <Entry Placeholder="Місто призначення" Text="{Binding Destination}" />
+
+                <Label Text="Тип вантажу" FontAttributes="Bold" />
+                <Entry Placeholder="Тип" Text="{Binding Type}" />
+
+                <Label Text="Вага" FontAttributes="Bold" />
+                <Entry Placeholder="Наприклад: 5т" Text="{Binding Weight}" />
+
+                <Label Text="Ціна (грн)" FontAttributes="Bold" />
+                <Entry Placeholder="0" Text="{Binding Price}" Keyboard="Numeric" />
+
+                <Label Text="Код вантажу" FontAttributes="Bold" />
+                <Entry Placeholder="0" Text="{Binding CargoCode}" Keyboard="Numeric" />
+
+                <Label Text="Статус" FontAttributes="Bold" />
+                <Entry Placeholder="Статус" Text="{Binding Status}" />
+
+                <Label Text="{Binding ErrorMessage}"
+                       TextColor="Red"
+                       IsVisible="{Binding HasError}" />
+
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Кнопки знизу -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,12,0,0">
+            <Button Grid.Column="0"
+                    Text="Скасувати"
+                    Command="{Binding CancelCommand}"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+
+            <Button Grid.Column="1"
+                    Text="Зберегти"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,14 @@
+D:\project\MauiApp1\logic\bin\Debug\net10.0\logic.deps.json
+D:\project\MauiApp1\logic\bin\Debug\net10.0\logic.runtimeconfig.json
+D:\project\MauiApp1\logic\bin\Debug\net10.0\logic.dll
+D:\project\MauiApp1\logic\bin\Debug\net10.0\logic.pdb
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.csproj.AssemblyReference.cache
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.AssemblyInfoInputs.cache
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.AssemblyInfo.cs
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.csproj.CoreCompileInputs.cache
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.dll
+D:\project\MauiApp1\logic\obj\Debug\net10.0\refint\logic.dll
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.pdb
+D:\project\MauiApp1\logic\obj\Debug\net10.0\logic.genruntimeconfig.cache
+D:\project\MauiApp1\logic\obj\Debug\net10.0\ref\logic.dll

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    Title="Logic">
+
+    <TabBar>
+        <ShellContent Title="Вантажі"
+                      Icon="cargo.png"
+                      ContentTemplate="{DataTemplate local:CargosPage}" />
+
+        <ShellContent Title="Водії"
+                      Icon="driver.png"
+                      ContentTemplate="{DataTemplate local:DriversPage}" />
+
+        <ShellContent Title="Транспорт"
+                      Icon="truck.png"
+                      ContentTemplate="{DataTemplate local:TransportsPage}" />
+
+        <ShellContent Title="Клієнти"
+                      Icon="customer.png"
+                      ContentTemplate="{DataTemplate local:CustomersPage}" />
+    </TabBar>
+</Shell>

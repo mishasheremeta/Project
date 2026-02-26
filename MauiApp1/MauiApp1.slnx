@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="logic/logic.csproj" Id="5825d5ae-6c7f-47a0-ba2f-9936b413d4c9" />
+  <Project Path="MauiApp1/MauiApp1.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
